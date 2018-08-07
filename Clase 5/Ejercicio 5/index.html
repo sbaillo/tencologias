@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./jquery/jquery-1.11.1.min.js"></script>
+    <script src="./js.js"></script>
+    <link rel="stylesheet" href="./jquery_mobile/jquery.mobile-1.4.5.min.css" />
+    <script src="./jquery_mobile/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./jquery_toast/jquery.mobile.toast.min.js"></script>
+    <script src="./db.js"></script>
+</head>
+
+<body>
+
+    <!-- Ingresar -->
+    <div data-role="page" id="ingresar">
+            <div data-role="header">
+                <h1>Estudiantes</h1>
+            </div>
+    
+            <div data-role="main" class="ui-content">
+                <h2>Ingresar</h2>
+                <form action="index.html" method="post">
+                    <input type="text" id="login_numero" placeholder="Numero de estudiante">
+                    <input type="password" id="login_password" placeholder="Password">
+                    
+                    <input type="button" id="btn_login" value="Login">
+                    <a href="#registro">Registrarse</a>
+                </form>
+            </div>
+    
+            <div data-role="footer" data-position="fixed">
+                <h3>Esto es el footer papa</h3>
+            </div>
+        </div>
+    <!-- FIN INGRESAR -->
+
+
+     <!-- Registro -->
+     <div data-role="page" id="registro">
+            <div data-role="header">
+                    <a href="#ingresar" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Estudiantes</h1>
+            </div>
+    
+            <div data-role="main" class="ui-content">
+                <h2>Registro</h2>
+                <form action="index.html" method="post">
+                    <input type="text" id="registro_nombre" placeholder="Nombre" required>
+                    <input type="text" id="registro_apellido" placeholder="Apellido" required>
+                    <input type="text" id="registro_estudiante" placeholder="Numero estudiante" required>
+                    <input type="text" id="registro_email" placeholder="Email" required>
+                    <input type="text" id="registro_direccion" placeholder="Direccion" required>
+                    <input type="text" id="registro_telefono" placeholder="Telefono" required>
+                    <input type="password" id="registro_password" placeholder="Password" required>
+                    
+                    <input type="button" id="btn_registrar" value="Registrar">
+                </form>
+            </div>
+    
+            <div data-role="footer" data-position="fixed">
+                <h3>Esto es el footer papa</h3>
+            </div>
+        </div>
+    <!-- FIN Registro -->
+
+
+    <!-- Listado de alumnos -->
+     <div data-role="page" id="listado">
+
+            <div data-role="panel" id="mypanel" data-display="overlay">
+                <ul data-role="listview">
+                    <li><a href="#favoritos">Favoritos</a></li>
+                    <li><a href="#miCuenta">Mi cuenta</a></li>
+                    <li><a href="#Salir">Salir</a></li>
+                    <li><a href="#" data-rel="close">Cerrar</a></li>
+                </ul>
+            </div><!-- /panel -->
+
+
+            <div data-role="header" data-position="fixed">
+                    <a href="#mypanel" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Estudiantes</h1>
+            </div>
+    
+            <div data-role="main" class="ui-content">
+                <p id="session"></p>
+                <h2>Listado de alumnos</h2>
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar alumnos..." data-inset="true" id="lista">   
+                
+                </ul>
+            </div>
+    
+            <div data-role="footer" data-position="fixed">
+                <h3>Esto es el footer papa</h3>
+            </div>
+        </div>
+    <!-- FIN Listado alumnos -->
+
+     <!-- Detalle de alumnos -->
+     <div data-role="page" id="detalle">
+            <div data-role="header">
+                <a href="#listado" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+                <h1>Estudiantes</h1>
+            </div>
+    
+            <div data-role="main" class="ui-content">
+                <div id="detalle_foto"></div>
+                <h2 id="detalle_nombre"></h2>
+                <hr>
+                <p id="detalle_estudiante"></p>
+                <p id="detalle_email"></p>
+                <p id="detalle_direccion"></p>
+                <p id="detalle_telefono"></p>
+            </div>
+    
+            <fieldset class="ui-grid-b">
+                        <div class="ui-block-a"><input type="button" data-icon="heart" value="Favorito"></div>
+                        <div class="ui-block-b"><input type="button" data-icon="delete"  value="Borrar"></div>
+            </fieldset>
+
+            <div data-role="footer" data-position="fixed">
+                <h3>Esto es el footer papa</h3>
+            </div>
+        </div>
+    <!-- FIN Listado alumnos -->
+
+</body>
+
+</html>
+
+<!-- http://medicort.tribus.com.uy -->

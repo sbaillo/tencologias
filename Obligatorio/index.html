@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Mutualista Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./jquery_mobile/theme.min.css" />
+    <link rel="stylesheet" href="./jquery_mobile/jquery.mobile.icons.min.css" />
+    <script src="./jquery/jquery-1.11.1.min.js"></script>
+    <script src="./js.js"></script>
+    <link rel="stylesheet" href="./jquery_mobile/jquery.mobile-1.4.5.min.css" />
+    <script src="./jquery_mobile/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./jquery_toast/jquery.mobile.toast.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- PANTALLA HOME -->
+    <div data-role="page" id="home" class="background">
+        <div data-role="header" data-position="fixed">
+            <h1>MedicORT</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h3>Bienvenido</h3>
+            <ul data-role="listview" data-inset="true" class="menu">
+                <li>
+                    <a href="#medicos" class="color1">
+                        <img src="./icons/medicos.png" class="icon">
+                        <h2>Especialistas</h2>
+                        <p>Agende su consulta</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#consultas" class="color2">
+                        <img src="./icons/consultas.png" class="icon">
+                        <h2>Mis consultas</h2>
+                        <p>Revise sus consultas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#favoritos" class="color3">
+                        <img src="./icons/favoritos.png" class="icon">
+                        <h2>Mis Favoritos</h2>
+                        <p>Medicos de cabecera</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#policlinicas" class="color4">
+                        <img src="./icons/mutualistas.png" class="icon">
+                        <h2>Policlinicas</h2>
+                        <p>Nuestras mutualistas</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Menu</a>
+                    </li>
+                    <li>
+                        <a href="#login" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN PANTALLA HOME -->
+
+    <!-- PANTALLA LOGIN -->
+    <div data-role="page" id="login" class="background">
+        <div data-role="header" data-position="fixed">
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <input type="email" id="login_email" placeholder="Ingrese su email">
+            <input type="password" id="login_password" placeholder="Ingrese password">
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#" id="btn_login" class="ui-btn ui-icon-check ui-btn-icon-left custom-button">Log in</a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="#registro" class="ui-btn ui-icon-edit ui-btn-icon-left btn-registro">Registro</a>
+                </div>
+            </fieldset>
+            <div id="error" class="red"></div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3></h3>
+        </div>
+    </div>
+    <!-- FIN PANTALLA LOGIN -->
+
+    
+    <!-- PANTALLA REGISTRO -->
+    <div data-role="page" id="registro" class="background">
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" href="#" class="button-back ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h2>Registro</h2>
+            <form action="index.html" method="post">
+                <input type="text" id="txt_R_nombre" placeholder="Nombre">
+                <input type="text" id="txt_R_apellido" placeholder="Apellido">
+                <input type="text" id="txt_R_cedula" placeholder="Documento">
+                <input type="email" id="txt_R_email" placeholder="Email">
+                <input type="text" id="txt_R_telefono" placeholder="Telefono">
+                <input type="password" id="txt_R_password1" placeholder="Password">
+                <input type="password" id="txt_R_password2" placeholder="Confirme su password">
+                <a href="#" id="btn_registro" class="ui-btn ui-icon-check ui-btn-icon-left custom-button">Registrarse</a>
+            </form>
+
+            <div id="error" class="red"></div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h3></h3>
+        </div>
+    </div>
+    <!-- FIN PANTALLA REGISTRO -->
+
+
+    <!-- PANTALLA Medicos -->
+    <div data-role="page" id="medicos" class="background">
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" class="button-back ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2>Especialistas</h2>
+            <select id="especialidad">
+                <option value="">Selecccione especialidad</option>
+                <option value="Rumpolog&iacute;a">Rumpolog&iacute;a</option>
+            </select>   
+            <a href="" id="btn_buscarMedicos" class="ui-btn ui-shadow ui-corner-all custom-button">Buscar especialistas</a>
+            
+            <ul data-role="listview" data-inset="true" id="listaEspecialistas">
+            </ul>
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Volver al menu</a>
+                    </li>
+                    <li>
+                        <a href="#inicio" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN PANTALLA Medicos -->
+
+
+    <!-- DETALLE Medico -->
+    <div data-role="page" id="detalle-medico" class="background">
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" class="button-back ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div id="foto"></div>
+            <h2 id="nombre"></h2>
+            <p id="titulo"></p>
+            <p id="especialidad"></p>
+            <p id="centro"></p>
+            <p id="puntuacion"></p>
+            
+            <a href="#agendar" class="ui-btn ui-shadow ui-corner-all custom-button">Nueva consulta</a>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all custom-button">Puntuar</a>
+            <a href="#" class="ui-btn ui-shadow ui-corner-all custom-button">Agregar a favoritos</a>
+            
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Volver al menu</a>
+                    </li>
+                    <li>
+                        <a href="#inicio" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN DETALLE Medico -->
+
+
+    <!-- PANTALLA Agendar consulta -->
+    <div data-role="page" id="agendar" class="background">
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" href="#" class="button-back ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2>Agendar consulta</h2>
+            <form action="index.html" method="post">
+                <input type="text" id="txt_C_dia" placeholder="Fecha">
+                <input type="text" id="txt_C_hora" placeholder="Hora">
+                <select id="slc_C_mutualista">
+                <option>Selecccione mutualista</option>
+                </select>
+
+                <a href="" id="btn_agendar" class="ui-btn ui-shadow ui-corner-all custom-button">Agendar</a>
+                </p>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Volver al menu</a>
+                    </li>
+                    <li>
+                        <a href="#inicio" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN PANTALLA agendar consulta -->
+
+
+    <!-- PANTALLA MIS CONSULTAS -->
+    <div data-role="page" id="consultas" class="background">
+        <div data-role="header" data-position="fixed">
+            <a data-rel="back" href="#" class="button-back ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2>Mis consultas</h2>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Volver al menu</a>
+                    </li>
+                    <li>
+                        <a href="#inicio" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN PANTALLA MIS CONSULTAS -->
+
+
+    <!-- PANTALLA MIS FAVORITOS -->
+    <div data-role="page" id="favoritos" class="background">
+        <div data-role="header" data-position="fixed">
+            <a href="#" data-rel="back" class="button-back ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2>Mis favoritos</h2>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Volver al menu</a>
+                    </li>
+                    <li>
+                        <a href="#inicio" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN PANTALLA MIS FAVORITOS -->
+
+
+    <!-- PANTALLA POLICLINICAS -->
+    <div data-role="page" id="policlinicas" class="background">
+        <div data-role="header" data-position="fixed">
+            <a href="#" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all button-back">No text</a>
+            <h1>MedicORT</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2>Policlinicas</h2>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-icon="home" class="bot-button">Volver al menu</a>
+                    </li>
+                    <li>
+                        <a href="#inicio" data-icon="action" class="bot-button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FIN PANTALLA MIS POLICLINICAS -->
+
+</body>
+
+</html>

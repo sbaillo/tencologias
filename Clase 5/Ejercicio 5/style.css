@@ -1,0 +1,47 @@
+/* Para que no se corte el titulo del header */
+.ui-header .ui-title{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.red{
+    color: red;
+}
+
+.icono{
+    width: 100px;
+}
+
+#icono{
+    text-align: center;
+}
+
+#tiempo{
+    text-align: center;
+}
+
+.icono-detalles{
+    width: 100%;
+}
+
+.icono-persona{
+    height: 80% !important;
+    margin: 10px 10px;
+}
+
+.ui-icon-loading {
+    background: url("./jquery_mobile/icons/ajax-loader.png");
+    background-size: 46px 46px;
+    width:46px;
+    height:46px;
+    -webkit-transform: rotate(360deg);
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes spin {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
