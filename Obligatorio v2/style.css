@@ -1,0 +1,77 @@
+
+   .ui-page, .ui-header, .ui-footer{
+    text-shadow: 0 0 0 !important;
+   }
+   
+   .ui-header, .ui-footer{
+    background-color: rgb(68, 74, 87) !important;
+    color: white !important;
+    font-weight: 300 !important;
+    border: none
+   }
+
+   .ui-header{
+    box-shadow: 5px -1px 10px 1px grey;
+   }
+   
+   .ui-footer{
+    box-shadow: -5px -1px 10px 1px grey;
+   }
+
+   .background{
+    background-color: rgba(40, 67, 124, 0.150) !important;
+   }
+
+   .icon{
+    height: 80% !important;
+    margin: 10px 10px !important;
+   }
+
+   .bot-button{
+    background-color: rgb(68, 74, 87) !important;
+    color: white !important;
+    text-shadow: 0 0 0 !important;
+   }
+
+   .custom-button{
+    background-color: rgba(40, 67, 124, 0.800) !important;
+    color: white !important;
+    font-weight: 400 !important;
+    text-shadow: 0 0 0 !important;
+   }
+
+   .button-back{
+    background-color: rgb(100, 106, 121) !important;
+    color: white !important;
+   }
+
+   .btn-registro{
+    background-color: rgba(40, 67, 124, 0.500) !important;
+    color: white !important;
+    font-weight: 400 !important;
+    text-shadow: 0 0 0 !important;
+   }
+
+   .menu li a{
+    color: white !important;
+    font-weight: 100 !important;
+    text-shadow: 0 0 0 !important;
+    border: 0px !important;
+   }
+
+   .color1{
+    background-color: rgba(40, 67, 124, 0.900) !important;
+   }
+
+   .color2{
+    background-color: rgba(40, 67, 124, 0.800) !important;
+   }
+
+   .color3{
+    background-color: rgba(40, 67, 124, 0.700) !important;
+   }
+
+   .color4{
+    background-color: rgba(40, 67, 124, 0.600) !important;
+   }
+    
